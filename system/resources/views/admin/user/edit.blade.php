@@ -68,11 +68,11 @@
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label"> Foto</label>
                                 <div class="col-md-5">
-                                    <img src="{{ url("public/$pegawai->foto") }}" style="width: 60%" onerror="this.src='{{ url('public') }}/foto.jpg';"/>
+                                    <img src="{{ url("public/$user->foto") }}" style="width: 60%" onerror="this.src='{{ url('public') }}/foto.jpg';"/>
                                 </div>
                                 <div class="col-sm-5">
                                     <input type="file" class="form-control" name="foto" accept="'jpg, .png, .jpeg"
-                                        value="{{ $pegawai->foto }}">
+                                        value="{{ $user->foto }}">
                                 </div>
                             </div>
 
