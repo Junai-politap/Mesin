@@ -8,6 +8,7 @@ use App\Models\Contact;
 use App\Models\Injection;
 use App\Models\Pengabdian;
 use App\Models\PengabdianMahasiswa;
+use App\Models\User;
 
 class AdminController extends Controller
 {
@@ -40,5 +41,25 @@ class AdminController extends Controller
    {
      Contact::destroy($contact);
      return back()->with('danger', 'Data Berhasil Dihapus');
+   }
+
+   public function profil()
+   {
+     $data['user'] = auth()->user();
+
+     return view('admin.profil', $data);
+   }
+
+   public function updateProfil($user)
+   {
+     $user = User::find($user);
+     $user->username = request('username');
+     $user->confir_password = request('confir_password');
+     $user->password = request('confir_password');
+     $user->email = request('email');     
+     $user->handleUploadFoto();
+     $user->save();
+
+     return back()->with('success', 'Data Profil Berhasil Dirubah');
    }
 }

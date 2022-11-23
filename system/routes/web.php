@@ -45,6 +45,9 @@ Route::prefix('admin')->middleware('auth')->group(function(){
     Route::get('showContact/{contact}', [AdminController::class, 'showContact']);
     Route::get('admin/contatc/{contact}', [AdminController::class, 'destroy']);
 
+    Route::get('/profil', [AdminController::class, 'profil']);
+    Route::PUT('/profil/{user}', [AdminController::class, 'updateProfil']);
+
 
     Route::resource('pegawai', PegawaiController::class);
     Route::resource('/mahasiswa', MahasiswaController::class);
