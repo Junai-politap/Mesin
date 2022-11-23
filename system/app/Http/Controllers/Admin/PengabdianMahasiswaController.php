@@ -73,7 +73,7 @@ class PengabdianMahasiswaController extends Controller
     }
 
     
-    public function destroy(PengabdianMahasiswa $pengabdian_mahasiswa)
+    public function destroy($pengabdian_mahasiswa)
     {
         PengabdianMahasiswa::destroy($pengabdian_mahasiswa);
 

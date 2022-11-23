@@ -61,7 +61,7 @@ class FasilitasController extends Controller
         return redirect('admin/fasilitas')->with('success', 'Data Berhasil Diedit');
     }
 
-    public function destroy(Fasilitas $fasilitas)
+    public function destroy($fasilitas)
     {
         Fasilitas::destroy($fasilitas);
 
@@ -78,7 +78,7 @@ class FasilitasController extends Controller
         return back()->with('success', 'Data Berhasil Disimpan');
     }
 
-    public function destroyFasilitas(GaleryFasilitas $galeryfasilitas)
+    public function destroyFasilitas($galeryfasilitas)
     {
         GaleryFasilitas::destroy($galeryfasilitas);
 

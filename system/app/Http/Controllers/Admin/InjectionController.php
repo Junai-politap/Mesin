@@ -69,7 +69,7 @@ class InjectionController extends Controller
     }
 
     
-    public function destroy(Injection $injection)
+    public function destroy($injection)
     {
         Injection::destroy($injection);
 

@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Contact;
+use App\Models\Injection;
+use App\Models\Pengabdian;
+use App\Models\PengabdianMahasiswa;
 
 class AdminController extends Controller
 {
@@ -12,6 +15,9 @@ class AdminController extends Controller
     public function index()
     {
         $data['user'] = auth()->user();
+        $data['inject'] = Injection::all()->count('id');
+        $data['dosen'] = Pengabdian::all()->count('id');
+        $data['mahasiswa'] = PengabdianMahasiswa::all()->count('id');
         return view('admin.index', $data);
     }
 

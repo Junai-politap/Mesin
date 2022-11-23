@@ -22,23 +22,11 @@
             <div class="col-xl-4">
 
                 <div class="card-box">
-                    <div class="dropdown float-right">
-                        <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
-                            <i class="mdi mdi-dots-horizontal"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            
-                            <a href="javascript:void(0);" class="dropdown-item">Settings</a>
-                            
-                            <a href="javascript:void(0);" class="dropdown-item">Download</a>
-                            
-                            <a href="javascript:void(0);" class="dropdown-item">Upload</a>
-                            
-                            <a href="javascript:void(0);" class="dropdown-item">Action</a>
-                        </div>
+                    <div class="float-right">
+                       <h4>{{ $inject }}</h2>
                     </div>
-                    <h4 class="header-title">Daily Sales</h4>
-                    <p class="text-muted">March 26 - April 01</p>
+                    <h4 class="title"> Jumlah Jurnal Injection</h4>
+                    
                     
                     
                 </div>
@@ -49,23 +37,11 @@
             <div class="col-xl-4">
 
                 <div class="card-box">
-                    <div class="dropdown float-right">
-                        <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
-                            <i class="mdi mdi-dots-horizontal"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            
-                            <a href="javascript:void(0);" class="dropdown-item">Settings</a>
-                            
-                            <a href="javascript:void(0);" class="dropdown-item">Download</a>
-                            
-                            <a href="javascript:void(0);" class="dropdown-item">Upload</a>
-                            
-                            <a href="javascript:void(0);" class="dropdown-item">Action</a>
-                        </div>
+                    <div class="float-right">
+                       <h4>{{ $dosen }}</h2>
                     </div>
-                    <h4 class="header-title">Daily Sales</h4>
-                    <p class="text-muted">March 26 - April 01</p>
+                    <h4 class="title"> Jumlah Jurnal Pengabdian Dosen</h4>
+                    
                     
                     
                 </div>
@@ -76,23 +52,11 @@
             <div class="col-xl-4">
 
                 <div class="card-box">
-                    <div class="dropdown float-right">
-                        <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
-                            <i class="mdi mdi-dots-horizontal"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            
-                            <a href="javascript:void(0);" class="dropdown-item">Settings</a>
-                            
-                            <a href="javascript:void(0);" class="dropdown-item">Download</a>
-                            
-                            <a href="javascript:void(0);" class="dropdown-item">Upload</a>
-                            
-                            <a href="javascript:void(0);" class="dropdown-item">Action</a>
-                        </div>
+                    <div class="float-right">
+                       <h4>{{ $mahasiswa }}</h2>
                     </div>
-                    <h4 class="header-title">Daily Sales</h4>
-                    <p class="text-muted">March 26 - April 01</p>
+                    <h4 class="title"> Jumlah Jurnal Pengabdian Mahasiswa</h4>
+                    
                     
                     
                 </div>

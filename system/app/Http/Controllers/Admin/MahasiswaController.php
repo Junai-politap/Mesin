@@ -89,7 +89,7 @@ class MahasiswaController extends Controller
     }
 
     
-    public function destroy(Mahasiswa $mahasiswa)
+    public function destroy($mahasiswa)
     {
         Mahasiswa::destroy($mahasiswa);
 

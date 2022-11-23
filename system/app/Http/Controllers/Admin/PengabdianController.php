@@ -73,7 +73,7 @@ class PengabdianController extends Controller
     }
 
     
-    public function destroy(Pengabdian $pengabdian)
+    public function destroy($pengabdian)
     {
         Pengabdian::destroy($pengabdian);
 
