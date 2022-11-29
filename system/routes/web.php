@@ -25,6 +25,7 @@ use App\Http\Controllers\Admin\FasilitasController;
 use App\Http\Controllers\Admin\PengabdianController;
 use App\Http\Controllers\Admin\PengabdianMahasiswaController;
 use App\Http\Controllers\Admin\InjectionController;
+use App\Http\Controllers\Admin\VideoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -68,7 +69,7 @@ Route::prefix('admin')->middleware('auth')->group(function(){
     Route::PUT('visi-misi/{visimisi}/update', [VisiMisiController::class , 'update']);
     
     Route::resource('/akreditasi', AkreditasiController::class);
-    
+    Route::resource('/video', VideoController::class);
     Route::resource('/slide', SlideController::class);
     Route::resource('/user', UserController::class);
     Route::resource('/berita', BeritaController::class);

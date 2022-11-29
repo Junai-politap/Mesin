@@ -6,9 +6,6 @@
         <div id="sidebar-menu">
 
             <ul class="metismenu" id="side-menu">
-
-                
-
                 <li>
                     <a href="{{ url('admin') }}">
                         <i class="dripicons-home"></i>
@@ -128,9 +125,9 @@
                             <a href="{{ url('admin/slide') }}"> Slide </a>
                         </li>
 
-                        {{-- <li>
-                            <a href="{{ url('admin/hmj') }}"> HMJ </a>
-                        </li> --}}
+                        <li>
+                            <a href="{{ url('admin/video') }}"> Video </a>
+                        </li>
                     </ul>
                 </li>
                 

@@ -11,6 +11,7 @@ use App\Models\Pedoman;
 use App\Models\Fasilitas;
 use App\Models\GaleryFasilitas;
 use App\Models\Contact;
+use App\Models\Video;
 
 class HomeController extends Controller
 {
@@ -19,6 +20,7 @@ class HomeController extends Controller
     {
         $data['list_slide'] = Slide::all();
         $data['list_berita'] = Berita::orderBy('id', 'DESC')->get();
+        $data['list_video'] = Video::orderBy('id', 'DESC')->take(1)->get();
         return view('web.index', $data);
     }
 
