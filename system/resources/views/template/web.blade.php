@@ -63,5 +63,6 @@
 	<script src="{{ url('public/web') }}/js/map-custom.js"></script>
 	<script src="{{ url('public/web') }}/js/contact.js"></script>
 
+	
 </body>
 </html>

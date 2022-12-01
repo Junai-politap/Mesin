@@ -41,6 +41,32 @@
                             </div>
 
                             <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Skema</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="skema" value="{{ $pengabdian->skema }}" required>
+                                </div>
+                            </div>                          
+                        
+                            <div class="form-group row">
+                                <label class="col-sm-12 col-md-3 col-form-label">Jenis Pengabdian</label>
+                                <div class="col-sm-9">
+                                    <select name="jenis_pengabdian" class="form-control">
+                                        <option value="Dosen" @if ($pengabdian->jenis_pengabdian == 'Dosen') selected @endif>Dosen
+                                        </option>
+                                        <option value="Internal" @if ($pengabdian->jenis_pengabdian == 'Internal') selected @endif>Internal
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Tahun Terbit</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="tahun_terbit" value="{{ $pengabdian->tahun_terbit }}" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Nama Anggota (Dosen)</label>
                                 <div class="col-sm-9">
                                     <textarea name="anggota_dosen" class="form-control" rows="10">{{ $pengabdian->anggota_dosen }}</textarea>
@@ -61,24 +87,7 @@
                                 </div>
                             </div>
 
-                            <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">Skema</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="skema" value="{{ $pengabdian->skema }}" required>
-                                </div>
-                            </div>
-
-                          
-                        
-                            <div class="form-group row" style="margin-top: 10%">
-                                <label class="col-sm-12 col-md-3 col-form-label">Cover</label>
-                                <div class="col-md-6">
-                                    <img src="{{ url("public/$pengabdian->cover") }}" style="width: 40%">
-                                </div>
-                                <div class="col-md-3">
-                                    <input class="form-control" type="file" name="cover" value="{{ $pengabdian->cover }}" accept=".jpg, .png, .jpeg">
-                                </div>
-                            </div>
+                            
 
                             <div class="form-group row mb-0">
                                 <div class="col-md-2"></div>

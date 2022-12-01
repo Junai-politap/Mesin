@@ -46,6 +46,8 @@
                                 </div>
                             </div>
 
+                            
+
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Nama Anggota </label>
                                 <div class="col-sm-9">
@@ -68,13 +70,14 @@
                                 </div>
                             </div>
 
-
                             <div class="form-group row">
-                                <label class="col-sm-12 col-md-3 col-form-label">Cover</label>
-                                <div class="col-md-9">
-                                    <input class="form-control" type="file" name="cover" accept=".jpg, .png, .jpeg">
+                                <label class="col-sm-3 col-form-label">Tahun Terbit</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="tahun_terbit" required>
                                 </div>
                             </div>
+
+                            
 
                             <div class="form-group row mb-0">
                                 <div class="col-md-2"></div>

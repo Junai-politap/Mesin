@@ -14,7 +14,7 @@
 
                             </ol>
                         </div>
-                        <h4 class="page-title"> Tambah Data Injection</h4>
+                        <h4 class="page-title"> Tambah Data Publikasi</h4>
                     </div>
                 </div>
             </div>
@@ -23,7 +23,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card-box">
-                        <form action="{{ url('admin/injection') }}" method="post" enctype="multipart/form-data">
+                        <form action="{{ url('admin/publikasi') }}" method="post" enctype="multipart/form-data">
                             @csrf
 
                             <div class="form-group row">
@@ -34,11 +34,20 @@
                             </div>
 
                             <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Nama Jurnal</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="nama_jurnal" required>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Judul</label>
                                 <div class="col-sm-9">
                                     <input type="text" class="form-control" name="judul" required>
                                 </div>
                             </div>
+
 
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Volume</label>
@@ -54,6 +63,7 @@
                                     <input type="text" class="form-control" name="tahun_terbit" required>
                                 </div>
                             </div>
+
 
                             <div class="form-group row">
                                 <label class="col-sm-12 col-md-3 col-form-label">Deskripsi</label>

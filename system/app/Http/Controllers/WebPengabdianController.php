@@ -9,30 +9,31 @@ use App\Models\Injection;
 
 class WebPengabdianController extends Controller
 {
-    public function injection()
+    public function penelitianPusat()
     {
-        $data['list_injection'] = Injection::all();
-        return view('web.jurnal.injection', $data);
+        $data['list_injection'] = Injection::where('jenis_penelitian', 'Pusat')->get();
+        return view('web.jurnal.penelitian-pusat', $data);
+    }
+
+    public function penelitianInternal()
+    {
+        $data['list_injection'] = Injection::where('jenis_penelitian', 'Internal')->get();
+
+        return view('web.jurnal.penelitian-internal', $data);
     }
 
     public function pengabdianDosen()
     {
-        $data['list_pengabdian'] = Pengabdian::all();
+        $data['list_pengabdian'] = Pengabdian::where('jenis_pengabdian', 'Dosen')->get();
         return view('web.jurnal.pengabdian-dosen', $data);
     }
 
-    public function judulPengabdian()
+    public function pengabdianInternal()
     {
-        $data['list_pengabdian'] = Pengabdian::all();
-        return view('web.jurnal.judul-pengabdian', $data);
+        $data['list_pengabdian'] = Pengabdian::where('jenis_pengabdian', 'Internal')->get();
+        return view('web.jurnal.pengabdian-internal', $data);
     }
 
-    public function showPengabdianDosen(Pengabdian $pengabdian)
-    {
-        $data['pengabdian'] = $pengabdian;
-
-        return view('web.jurnal.show-pengabdian-dosen', $data);
-    }
 
     public function pengabdianMahasiswa()
     {
@@ -40,10 +41,4 @@ class WebPengabdianController extends Controller
         return view('web.jurnal.pengabdian-mahasiswa', $data);
     }
 
-    public function showPengabdianMahasiswa(pengabdianMahasiswa $pengabdian_mahasiswa)
-    {
-        $data['pengabdian_mahasiswa'] = $pengabdian_mahasiswa;
-
-        return view('web.jurnal.show-pengabdian-mahasiswa', $data);
-    }
 }

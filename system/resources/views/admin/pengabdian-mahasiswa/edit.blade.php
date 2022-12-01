@@ -69,13 +69,10 @@
                                 </div>
                             </div>
 
-                            <div class="form-group row" style="margin-top: 10%">
-                                <label class="col-sm-12 col-md-3 col-form-label">Cover</label>
-                                <div class="col-md-6">
-                                    <img src="{{ url("public/$pengabdian_mahasiswa->cover") }}" style="width: 40%">
-                                </div>
-                                <div class="col-md-3">
-                                    <input class="form-control" type="file" name="cover" value="{{ $pengabdian_mahasiswa->cover }}" accept=".jpg, .png, .jpeg">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Tahun Terbit</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="tahun_terbit" value="{{ $pengabdian_mahasiswa->tahun_terbit }}" required>
                                 </div>
                             </div>
 

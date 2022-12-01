@@ -27,7 +27,7 @@
                                     <th class="text-center">Ketua</th>
                                     <th class="text-center">Anggota Dosen</th>
                                     <th class="text-center">Anggota Mahasiswa</th>
-                                    
+                                    <th class="text-center">Jenis Pengabdian</th>
                                 </tr>
                             </thead>
 
@@ -51,6 +51,7 @@
                                         <td class="text-center">{{ $pengabdian->ketua_peneliti }}</td>
                                         <td class="text-center">{!! nl2br($pengabdian->anggota_dosen) !!}</td>
                                         <td class="text-center">{!! nl2br($pengabdian->anggota_mahasiswa) !!}</td>
+                                        <td class="text-center">{{ $pengabdian->jenis_pengabdian }}</td>
                                         
 
                                     </tr>

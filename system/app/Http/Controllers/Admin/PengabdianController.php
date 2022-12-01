@@ -32,8 +32,10 @@ class PengabdianController extends Controller
         $pengabdian->anggota_dosen = request('anggota_dosen');
         $pengabdian->anggota_mahasiswa = request('anggota_mahasiswa');
         $pengabdian->skema = request('skema');
+        $pengabdian->tahun_terbit = request('tahun_terbit');
+        $pengabdian->jenis_pengabdian = request('jenis_pengabdian');
         $pengabdian->deskripsi = request('deskripsi');
-        $pengabdian->handleUploadCover();
+        
         $pengabdian->save();
 
         return redirect('admin/pengabdian')->with('success', 'Data Berhasil Disimpan');
@@ -65,8 +67,10 @@ class PengabdianController extends Controller
         $pengabdian->anggota_dosen = request('anggota_dosen');
         $pengabdian->anggota_mahasiswa = request('anggota_mahasiswa');
         $pengabdian->skema = request('skema');
+        $pengabdian->tahun_terbit = request('tahun_terbit');
+        $pengabdian->jenis_pengabdian = request('jenis_pengabdian');
         $pengabdian->deskripsi = request('deskripsi');
-        $pengabdian->handleUploadCover();
+        
         $pengabdian->save();
 
         return redirect('admin/pengabdian')->with('success', 'Data Berhasil Diedit');

@@ -27,6 +27,8 @@
 
         <link href="{{url('public/admin')}}/assets/libs/custombox/custombox.min.css" rel="stylesheet">
 
+        <link href="{{url('public/admin')}}/assets/libs/summernote/summernote-bs4.css" rel="stylesheet" />
+
     </head>
 
     <body>
@@ -101,6 +103,21 @@
         <script src="{{url('public/admin')}}/assets/js/app.min.js"></script>
 
         <script src="{{url('public/admin')}}/assets/libs/custombox/custombox.min.js"></script>
+
+        <script src="{{url('public/admin')}}/assets/libs/summernote/summernote-bs4.min.js"></script>
+
+	<script>
+		jQuery(document).ready(function(){
+			$('.summernote').summernote({
+				height: 230,                 // set editor height
+				minHeight: null,             // set minimum height of editor
+				maxHeight: null,             // set maximum height of editor
+				focus: false                 // set focus to editable area after initializing summernote
+			});
+
+		});
+        
+	</script>
 
     </body>
 </html>

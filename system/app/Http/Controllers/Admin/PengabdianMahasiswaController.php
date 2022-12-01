@@ -32,8 +32,9 @@ class PengabdianMahasiswaController extends Controller
         $pengabdian_mahasiswa->ketua_peneliti = request('ketua_peneliti');
         $pengabdian_mahasiswa->nama_anggota = request('nama_anggota');
         $pengabdian_mahasiswa->skema = request('skema');
+        $pengabdian_mahasiswa->tahun_terbit = request('tahun_terbit');
         $pengabdian_mahasiswa->deskripsi = request('deskripsi');
-        $pengabdian_mahasiswa->handleUploadCover();
+    
         $pengabdian_mahasiswa->save();
 
         return redirect('admin/pengabdian-mahasiswa')->with('success', 'Data Berhasil Disimpan');
@@ -65,8 +66,8 @@ class PengabdianMahasiswaController extends Controller
         $pengabdian_mahasiswa->ketua_peneliti = request('ketua_peneliti');
         $pengabdian_mahasiswa->nama_anggota = request('nama_anggota');
         $pengabdian_mahasiswa->skema = request('skema');
+        $pengabdian_mahasiswa->tahun_terbit = request('tahun_terbit');
         $pengabdian_mahasiswa->deskripsi = request('deskripsi');
-        $pengabdian_mahasiswa->handleUploadCover();
         $pengabdian_mahasiswa->save();
 
         return redirect('admin/pengabdian-mahasiswa')->with('success', 'Data Berhasil Diedit');

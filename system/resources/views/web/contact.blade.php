@@ -14,7 +14,7 @@
 <section class="bg-0 p-t-95 p-b-40">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-sm-10 col-md-6 p-b-60">
+            {{-- <div class="col-sm-10 col-md-6 p-b-60">
                 <h3 class="t1-m-5 cl-3 m-b-44">
                     Masukan Pesan Anda
                 </h3>
@@ -41,9 +41,9 @@
                         Kirim Pesan
                     </button>
                 </form>
-            </div>
+            </div> --}}
 
-            <div class="col-sm-10 col-md-6 p-b-60">
+            <div class="col-sm-10 col-md-12 p-b-60">
                 <div class="p-l-30 p-l-0-sr767">
                     <h3 class="t1-m-5 cl-3 m-b-38">
                         Contact Info
@@ -90,9 +90,9 @@
                 </div>
             </div>
 
-            <div class="col-md-12">
+            {{-- <div class="col-md-12">
                 <img src="{{ url('public') }}/maps.png" style="width: 100%; height: 100%; border-radius: 1%">
-            </div>
+            </div> --}}
         </div>
     </div>
 </section>

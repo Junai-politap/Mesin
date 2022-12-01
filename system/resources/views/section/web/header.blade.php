@@ -46,21 +46,27 @@
                     </li>
 
                     <li>
-                        <a>Akademik</a>
+                        <a href="">Akademik</a>
                         <ul class="sub-menu">
                             <li><a href="{{ url('akademik/kurikulum') }}">Kurikulum</a></li>
+                            <li><a href="{{ url('pedoman') }}"> Pedoman</a></li>
                             <li><a href="{{ url('akademik/tugas-akhir') }}">Tugas Akhir</a></li>
                             <li><a href="{{ url('akademik/akreditasi') }}">Akreditasi</a></li>
                         </ul>
                     </li>
 
                     <li>
-                        <a>Jurnal</a>
+                        <a href="">Hibah</a>
                         <ul class="sub-menu">
-                            <li><a href="{{ url('jurnal/injection') }}"> Injection</a></li>
+                            <li><a href="#"> Penelitian</a>
+                                <ul class="sub-menu">
+                                    <li><a href="{{ url('jurnal/penelitian-pusat') }}">Penelitian Pusat</a></li>
+                                    <li><a href="{{ url('jurnal/penelitian-internal') }}"> Penelitian Internal</a></li>
+                                </ul>
+                            </li>
                             <li><a href="#"> Pengabdian</a>
                                 <ul class="sub-menu">
-                                    <li><a href="{{ url('jurnal/judul-pengabdian') }}">Judul Pengabdian</a></li>
+                                    <li><a href="{{ url('jurnal/pengabdian-internal') }}"> Pengabdian Internal</a></li>
                                     <li><a href="{{ url('jurnal/pengabdian-dosen') }}"> Pengabdian Dosen</a></li>
                                 </ul>
                             </li>
@@ -70,11 +76,7 @@
                     </li>
 
                     <li>
-                        <a href="{{ url('pedoman') }}">Pedoman</a>
-                    </li>
-
-                    <li>
-                        <a>Fasilitas</a>
+                        <a href="">Fasilitas</a>
                         <ul class="sub-menu">
                             <li><a href="{{ url('fasilitas-ruang-kelas') }}"> Ruang Kelas</a></li>
                             <li><a href="{{ url('fasilitas-workshop') }}"> Workshop</a></li>
@@ -93,13 +95,24 @@
                     </li>
 
                     <li>
-                        <a>Papan Informasi </a>
+                        <a href="">Event & Galeri </a>
+                        <ul class="sub-menu">
+                            <li><a href="{{ url('event/publikasi') }}"> Publikasi</a></li>
+                            <li><a href="{{ url('event/seminar') }}"> Seminar</a></li>
+                            <li><a href="{{ url('event/galeri') }}"> Galeri</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="{{ url('kerjasama') }}"> Kerjasama</a>
+                    </li>
+                    <li>
+                        <a href="">Papan Informasi </a>
                         <ul class="sub-menu">
                             <li><a href="{{ url('lowongan') }}"> Lowongan</a></li>
                             <li><a href="{{ url('berita') }}"> Berita</a></li>
                         </ul>
                     </li>
-
                     <li>
                         <a href="{{ url('alumni') }}"> Alumni</a>
                     </li>

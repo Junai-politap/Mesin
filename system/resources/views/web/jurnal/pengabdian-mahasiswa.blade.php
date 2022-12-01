@@ -1,49 +1,137 @@
 @extends('template.web')
 @section('content')
     <section class="bg-img1 kit-overlay1">
-        <div class="container size-h-1 p-tb-30 flex-col-c-c">
+        <div class="container size-h-1 p-tb-0 flex-col-c-c">
             <h2 class="t1-b-1 text-uppercase cl-0 txt-center">
-                Pengabdian Mahasiswa
+                Data Jurnal Pengabdian Mahasiswa
             </h2>
         </div>
     </section>
     <section class="bg-12 p-t-92 p-b-60">
         <div class="container">
-            <div class="row justify-content-center">
-                @foreach ($list_pengabdian_mahasiswa as $pengabdian_mahasiswa)
-                    <div class="col-md-4 p-b-40">
-                        <div class="bg-0 h-full">
-                            <a href="{{ url("jurnal/show-pengabdian-mahasiswa/$pengabdian_mahasiswa->id") }}">
-                                <div class="flex-wr-s-c p-b-9">
-                                    <div class="bg-0 p-rl-20 p-t-20 p-b-10">
-                                        <p style="font-size: 100%; text-align: justify;color: black;">
-                                            <strong> {{ $pengabdian_mahasiswa->judul }} </strong>
-                                        </p>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="{{ url("jurnal/show-pengabdian-mahasiswa/$pengabdian_mahasiswa->id") }}" class="hov-img0 of-hidden">
-                                <img src="{{ url("public/$pengabdian_mahasiswa->cover") }}">
-                            </a>
-
-                            {{-- <div class="bg-0 p-rl-28 p-t-26 p-b-35">
-                        <h4 class="p-b-12 txt-center">
-                            <a href="{{ url("jurnal/show-pengabdian-dosen/$pengabdian->id") }}" class="t1-m-1 cl-3 hov-link2 trans-02">
-                                {{ $pengabdian->ketua_peneliti }}
-                            </a>
-                        </h4>
-
-                       
-                        <a href="{{ url("jurnal/show-pengabdian-dosen/$pengabdian->id") }}" class="d-inline-flex flex-c-c size-a-1 p-rl-15 t1-s-2 cl-0 bg-11 hov-btn1 trans-02">
-                            Selengkapnya
-                        </a>
-                    </div> --}}
+            <ul class="nav nav-tabs mb-5" id="myTab" role="tablist">
+                @foreach ($list_pengabdian_mahasiswa->groupBy('tahun_terbit') as $tahun_terbit => $val)
+                    <li class="nav-item">
+                        <a class="nav-link @if ($loop->first) active @endif" data-toggle="tab"
+                            href="#tahun_terbit-{{ $tahun_terbit }}" role="tab">Tahun {{ $tahun_terbit }}</a>
+                    </li>
+                @endforeach
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                @foreach ($list_pengabdian_mahasiswa->groupBy('tahun_terbit') as $tahun_terbit => $list_pengabdian_mahasiswa)
+                    <div class="tab-pane fade show active" id="tahun_terbit-{{ $tahun_terbit }}" role="tabpanel">
+                        <div class="row">
+                            <div class="col-md-12 mb-5">
+                                <table class="table table-bordered table-striped">
+                                    <thead>
+                                        <th class="text-center">No</th>
+                                        <th class="text-center">Judul</th>
+                                        <th class="text-center">Nama Pembimbing</th>
+                                        <th class="text-center">Tahun Terbit</th>
+                                        <th class="text-center"> Detail</th>
+                                    </thead>
+                                    @php
+                                        $no=1;
+                                    @endphp
+                                    <tbody>
+                                        @foreach ($list_pengabdian_mahasiswa as $pengabdian_mahasiswa)
+                                            <tr>
+                                                <td class="text-center">{{ $no++ }}</td>
+                                                <td class="text-justify">{{ $pengabdian_mahasiswa->judul }}</td>
+                                                <td class="text-center">{{ $pengabdian_mahasiswa->pembimbing }}</td>
+                                                <td class="text-center">{{ $pengabdian_mahasiswa->tahun_terbit }}</td>
+                                                <td class="text-center">
+                                                    <button class="btn btn-info" data-toggle="modal"
+                                                    data-target="#modal-lg{{ $pengabdian_mahasiswa->id }}">
+                                                    <span class="fa fa-info"></span>
+                                                </button>
+                                                </td>
+                                                <div class="modal fade" id="modal-lg{{ $pengabdian_mahasiswa->id }}" style="margin-top: 10%">
+                                                    <div class="modal-dialog modal-lg">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h3 class="modal-title text-center" style="text-transform: uppercase">
+                                                                    <strong> {{ $pengabdian_mahasiswa->judul }}</strong>
+                                                                </h3>
+                                                                <button type="button" class="close"
+                                                                    data-dismiss="modal" aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                    
+                                                            @csrf
+                                                            <div class="modal-body">
+                                                                <div class="card-body">
+                                                                    <div class="form-group row">
+                                                                        <label class="col-sm-3 col-form-label">
+                                                                            Nama Pembimbing
+                                                                        </label>
+                                                                        <div class="col-sm-9">
+                                                                            <label class="col-form-label">
+                                                                                : {{ $pengabdian_mahasiswa->pembimbing }}</label>
+                                                                        </div>
+                                                                    </div>
+                                                                    <hr>
+                                                                    <div class="form-group row">
+                                                                        <label class="col-sm-3 col-form-label">
+                                                                            Ketua Panelitian
+                                                                        </label>
+                                                                        <div class="col-sm-9">
+                                                                            <label class="col-form-label">
+                                                                                : {{ $pengabdian_mahasiswa->ketua_peneliti }}</label>
+                                                                        </div>
+                                                                    </div>
+                                                                    
+                                                                    <hr>
+                    
+                                                                    <div class="form-group row">
+                                                                        <label class="col-sm-3 col-form-label">
+                                                                            Nama Anggota
+                                                                        </label>
+                                                                        <div class="col-sm-9">
+                                                                            <label class="col-form-label">
+                                                                                : {!! nl2br($pengabdian_mahasiswa->nama_anggota) !!}
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                    <hr>
+                                                                    <div class="form-group row">
+                                                                        <label class="col-sm-3 col-form-label">
+                                                                            Skema
+                                                                        </label>
+                                                                        <div class="col-sm-9">
+                                                                            <label class="col-form-label">
+                                                                                : {{$pengabdian_mahasiswa->skema }}</label>
+                                                                        </div>
+                                                                    </div>
+                                                                    
+                                                                    <hr>
+                                                                    <div class="form-group row">
+                                                                        <label class="col-sm-3 col-form-label">Deskripsi</label>
+                                                                        <div class="col-sm-9">
+                                                                            <label class="form-label"
+                                                                                style="text-align: justify">
+                                                                                {!! nl2br($pengabdian_mahasiswa->deskripsi) !!}</label>
+                                                                        </div>
+                                                                    </div>
+                                                                    <hr>
+                                                                    
+                                                                </div>
+                    
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
-                @endforeach
-
-
+                    @endforeach
             </div>
+           
         </div>
     </section>
 @endsection

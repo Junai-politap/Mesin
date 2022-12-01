@@ -24,8 +24,12 @@ use App\Http\Controllers\Admin\JudulTAController;
 use App\Http\Controllers\Admin\FasilitasController;
 use App\Http\Controllers\Admin\PengabdianController;
 use App\Http\Controllers\Admin\PengabdianMahasiswaController;
-use App\Http\Controllers\Admin\InjectionController;
+use App\Http\Controllers\Admin\PenelitianController;
 use App\Http\Controllers\Admin\VideoController;
+use App\Http\Controllers\Admin\GaleriController;
+use App\Http\Controllers\Admin\PublikasiController;
+use App\Http\Controllers\Admin\SeminarController;
+use App\Http\Controllers\Admin\KerjasamaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,7 +57,9 @@ Route::prefix('admin')->middleware('auth')->group(function(){
     Route::resource('pegawai', PegawaiController::class);
     Route::resource('/mahasiswa', MahasiswaController::class);
     Route::resource('/kurikulum', KurikulumController::class);
-    Route::resource('/injection', InjectionController::class);
+    Route::resource('/penelitian', PenelitianController::class);
+    Route::get('penelitian/{injection}/edit', [PenelitianController::class, 'edit']);
+    Route::PUT('penelitian/{injection}/update', [PenelitianController::class, 'update']);
     Route::resource('/pedoman', PedomanController::class);
     Route::resource('/pengabdian', PengabdianController::class);
     Route::resource('/pengabdian-mahasiswa', PengabdianMahasiswaController::class);
@@ -79,8 +85,12 @@ Route::prefix('admin')->middleware('auth')->group(function(){
     Route::resource('/judul-tugas-akhir', JudulTAController::class);
     Route::PUT('judul-tugas-akhir/{judulta}/update', [JudulTAController::class , 'update']);
 
-    
-    
+
+    Route::resource('/galeri', GaleriController::class);
+    Route::resource('/publikasi', PublikasiController::class);
+    Route::resource('/seminar', SeminarController::class);
+    Route::resource('/kerjasama', KerjasamaController::class);
+
 });
 
 Route::resource('/', HomeController::class);
@@ -95,13 +105,11 @@ Route::get('fasilitas-laboratorium-pnuematik-dan-hidrolik', [HomeController::cla
 Route::get('fasilitas-laboratorium-mekanika-fluida', [HomeController::class, 'fluida']);
 Route::get('show-fasilitas/{fasilitas}', [HomeController::class, 'showFasilitas']);
 
-Route::get('jurnal/injection', [WebPengabdianController::class, 'injection']);
-Route::get('jurnal/show-injection/{injection}', [WebPengabdianController::class, 'showinjection']);
+Route::get('jurnal/penelitian-internal', [WebPengabdianController::class, 'penelitianInternal']);
+Route::get('jurnal/penelitian-pusat', [WebPengabdianController::class, 'penelitianPusat']);
 Route::get('jurnal/pengabdian-dosen', [WebPengabdianController::class, 'pengabdianDosen']);
-Route::get('jurnal/judul-pengabdian', [WebPengabdianController::class, 'judulPengabdian']);
-Route::get('jurnal/show-pengabdian-dosen/{pengabdian}', [WebPengabdianController::class, 'showPengabdianDosen']);
+Route::get('jurnal/pengabdian-internal', [WebPengabdianController::class, 'pengabdianInternal']);
 Route::get('jurnal/pengabdian-mahasiswa', [WebPengabdianController::class, 'pengabdianMahasiswa']);
-Route::get('jurnal/show-pengabdian-mahasiswa/{pengabdian_mahasiswa}', [WebPengabdianController::class, 'showPengabdianMahasiswa']);
 
 Route::get('akademik/kurikulum', [AkademikController::class, 'kurikulum']);
 Route::get('akademik/akreditasi', [AkademikController::class, 'akreditasi']);
@@ -121,6 +129,16 @@ Route::get('berita', [PapanInformasiController::class, 'berita']);
 Route::get('show-berita/{berita}', [PapanInformasiController::class, 'showBerita']);
 Route::get('lowongan', [PapanInformasiController::class, 'lowongan']);
 Route::get('show-lowongan/{lowongan}', [PapanInformasiController::class, 'showLowongan']);
+
+Route::get('event/publikasi', [HomeController::class, 'publikasi']);
+Route::get('event/seminar', [HomeController::class, 'seminar']);
+Route::get('event/galeri', [HomeController::class, 'galeri']);
+Route::get('event/detail-galeri/{galeri}', [HomeController::class, 'showGaleri']);
+
+Route::get('kerjasama', [HomeController::class, 'kerjasama']);
+Route::get('kerjasama/{kerjasama}', [HomeController::class, 'showKerjasama']);
+
+
 
 
 Route::get('login', [AuthController::class, 'login'])->name('login');

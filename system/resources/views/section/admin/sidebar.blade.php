@@ -62,15 +62,15 @@
                 <li>
                     <a href="#">
                         <i class="fa fa-book"></i>
-                        <span> Jurnal </span>
+                        <span> Hibah </span>
                         <span class="menu-arrow"></span>
                     </a>
                     <ul class="nav-second-level" aria-expanded="false">
                         <li>
-                            <a href="{{ url('admin/injection') }}"> Injection</a>
+                            <a href="{{ url('admin/penelitian') }}"> Penilitian</a>
                         </li>
                         <li>
-                            <a href="{{ url('admin/pengabdian') }}" style="font-size: 95%">Pengabdian Dosen</a>
+                            <a href="{{ url('admin/pengabdian') }}" style="font-size: 95%">Pengabdian</a>
                         </li>
 
                         <li>
@@ -79,7 +79,23 @@
                         
                     </ul>
                 </li>
-    
+                
+                <li>
+                    <a href="#">
+                        <i class="fa fa-calendar"></i>
+                        <span> Event </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <ul class="nav-second-level" aria-expanded="false">
+                        <li>
+                            <a href="{{ url('admin/publikasi') }}"> Publikasi</a>
+                        </li>
+                        <li>
+                            <a href="{{ url('admin/seminar') }}"> Seminar</a>
+                        </li>
+                        
+                    </ul>
+                </li>
 
                 <li>
                     <a href="{{ url('admin/pedoman') }}">
@@ -124,7 +140,9 @@
                         <li>
                             <a href="{{ url('admin/slide') }}"> Slide </a>
                         </li>
-
+                        <li>
+                            <a href="{{ url('admin/galeri') }}"> Galeri </a>
+                        </li>
                         <li>
                             <a href="{{ url('admin/video') }}"> Video </a>
                         </li>
@@ -132,9 +150,9 @@
                 </li>
                 
                 <li>
-                    <a href="{{ url('admin/contact') }}">
-                        <i class="fa fa-envelope"></i>
-                        <span> Komentar </span>
+                    <a href="{{ url('admin/kerjasama') }}">
+                        <i class="fa fa-file"></i>
+                        <span> Kerjasama </span>
                         
                     </a>
                     

@@ -11,7 +11,6 @@
         <div class="container">
 
             <div class="tab02 p-t-20">
-                <!-- Nav tabs -->
                 <ul class="nav nav-tabs" role="tablist">
                     <li class="nav-item">
                         <a class="nav-link active" data-toggle="tab" href="#description" role="tab"> Pedoman Lab</a>
@@ -52,7 +51,9 @@
                         </div>
                     </div>
 
-
+                    @php
+                    $noo = 1;
+                @endphp
                     <div class="tab-pane fade" id="info" role="tabpanel">
                         <div class="p-rl-30 p-t-25 p-b-35">
                             <h5 class="t1-m-7 cl-3 text-uppercase m-b-12">
@@ -60,7 +61,7 @@
                                     @if ($pedoman->jenis_pedoman == 'Pedoman Bengkel')
                                         <ul class="w-50">
                                             <li class="kit-list1 p-b-9">
-                                                <p style="color: black">{{ $no++ }}.
+                                                <p style="color: black">{{ $noo++ }}.
                                                     <a style="color: black; font-family: roboto"
                                                         href="{{ url("public/$pedoman->file_word") }}">{{ $pedoman->nama }}</a>
                                                     | <a href="{{ url("public/$pedoman->file_pdf") }}" target="_blank">File
@@ -73,7 +74,9 @@
                             </h5>
                         </div>
                     </div>
-
+                    @php
+                    $nooo = 1;
+                @endphp
                     <div class="tab-pane fade" id="reviews" role="tabpanel">
                         <div class="p-rl-30 p-t-25 p-b-35">
                             <h5 class="t1-m-7 cl-3 text-uppercase m-b-12">
@@ -81,7 +84,7 @@
                                     @if ($pedoman->jenis_pedoman == 'Pedoman Tugas Akhir')
                                         <ul class="w-50">
                                             <li class="kit-list1 p-b-9">
-                                                <p style="color: black">{{ $no++ }}.
+                                                <p style="color: black">{{ $nooo++ }}.
                                                     <a style="color: black; font-family: roboto"
                                                         href="{{ url("public/$pedoman->file_word") }}">{{ $pedoman->nama }}</a>
                                                     | <a href="{{ url("public/$pedoman->file_pdf") }}" target="_blank">File

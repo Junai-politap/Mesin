@@ -8,7 +8,7 @@
                         <div class="page-title-right">
 
                         </div>
-                        <h2 class="page-title text-center" style="font-size: 20px;">Data Injection</h2>
+                        <h2 class="page-title text-center" style="font-size: 20px;">Data Publikasi</h2>
                     </div>
                 </div>
             </div>
@@ -16,7 +16,7 @@
                 <div class="col-md-12">
                     <div class="card-box">
 
-                        <a href="{{ url('admin/injection') }}/create" class="btn btn-primary"><span
+                        <a href="{{ url('admin/publikasi') }}/create" class="btn btn-primary"><span
                                 class="fa fa-plus"></span> Tambah Data</a>
 
                         <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap">
@@ -26,31 +26,31 @@
                                     <th class="text-center">Aksi</th>
                                     <th class="text-center">Judul</th>
                                     <th class="text-center">Nama Penulis</th>
-                                    <th class="text-center">Volume</th>
+                                    <th class="text-center">Tahun Terbit</th>
                                     
                                 </tr>
                             </thead>
 
 
                             <tbody>
-                                @foreach ($list_injection as $injection)
+                                @foreach ($list_publikasi as $publikasi)
                                     <tr>
                                         <td class="text-center">{{ $loop->iteration }}</td>
                                         <td class="text-center">
                                             <div class="btn-group">
-                                                <a href="{{ url("admin/injection/$injection->id") }}"
+                                                <a href="{{ url("admin/publikasi/$publikasi->id") }}"
                                                     class="btn btn-info"><span class="fa fa-info"></span> Lihat</a>
-                                                <a href="{{ url("admin/injection/$injection->id") }}/edit"
+                                                <a href="{{ url("admin/publikasi/$publikasi->id") }}/edit"
                                                     class="btn btn-warning"><span class="fa fa-edit"></span> Edit</a>
                                                 @include('template.utils.delete', [
-                                                    'url' => url('admin/injection', $injection->id),
+                                                    'url' => url('admin/publikasi', $publikasi->id),
                                                 ])
                                             </div>
                                         </td>
                                         
-                                        <td class="text-center">{{ $injection->judul }}</td>
-                                        <td class="text-center">{{$injection->nama_penulis}}</td>
-                                        <td class="text-center">{{ $injection->volume }}</td>
+                                        <td class="text-center">{{ $publikasi->judul }}</td>
+                                        <td class="text-center">{{$publikasi->nama_penulis}}</td>
+                                        <td class="text-center">{{ $publikasi->tahun_terbit }}</td>
                                         
 
                                     </tr>

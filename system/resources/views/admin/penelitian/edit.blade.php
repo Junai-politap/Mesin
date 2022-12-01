@@ -14,7 +14,7 @@
 
                             </ol>
                         </div>
-                        <h4 class="page-title"> Edit Data Pengabdian</h4>
+                        <h4 class="page-title"> Edit Data Penelitian</h4>
                     </div>
                 </div>
             </div>
@@ -23,7 +23,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card-box">
-                        <form action="{{ url('admin/injection', $injection->id) }}" method="post" enctype="multipart/form-data">
+                        <form action="{{ url('admin/penelitian', $injection->id) }}" method="post" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
                             <div class="form-group row">
@@ -41,15 +41,29 @@
                             </div>
 
                             <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">Volume</label>
+                                <label class="col-sm-3 col-form-label">Anggota Dosen</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="volume" value="{{ $injection->volume }}">
+                                    <textarea name="anggota_dosen" class="form-control">{{ $injection->anggota_dosen }}</textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Anggota Mahasiswa</label>
+                                <div class="col-sm-9">
+                                    <textarea name="anggota_mahasiswa" class="form-control">{{ $injection->anggota_mahasiswa }}</textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Dana</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="dana" value="{{ $injection->dana }}">
                                 </div>
                             </div>
 
                             
                             <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">Tahun Terbit</label>
+                                <label class="col-sm-3 col-form-label">Tahun Pelaksanaan</label>
                                 <div class="col-sm-9">
                                     <input type="text" class="form-control" name="tahun_terbit" value="{{ $injection->tahun_terbit }}">
                                 </div>
@@ -59,6 +73,19 @@
                                 <label class="col-sm-12 col-md-3 col-form-label">Deskripsi</label>
                                 <div class="col-sm-9">
                                     <textarea name="deskripsi" class="form-control" rows="10">{{ $injection->deskripsi }}</textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-12 col-md-3 col-form-label">Jenis Penelitian</label>
+                                <div class="col-sm-9">
+                                    <select name="jenis_penelitian" class="form-control">
+                                        <option value="Internal" @if ($injection->jenis_penelitian == 'Internal') selected @endif>Internal
+                                        </option>
+
+                                        <option value="Pusat" @if ($injection->jenis_penelitian == 'Pusat') selected @endif>Pusat
+                                        </option>
+                                    </select>
                                 </div>
                             </div>
 

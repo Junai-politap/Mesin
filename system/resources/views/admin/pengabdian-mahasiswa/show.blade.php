@@ -16,8 +16,8 @@
                         <div class="col-md-8">
                             <div class="card mb-4 mb-xl-0">
                                 <div class="card-body">
-                                    <img class="img-account-profile mb-2" src="{{ url("public/$pengabdian_mahasiswa->cover") }}"
-                                        style="width: 80%">
+                                    {{-- <img class="img-account-profile mb-2" src="{{ url("public/$pengabdian_mahasiswa->cover") }}"
+                                        style="width: 80%"> --}}
 
 
                                 </div>
