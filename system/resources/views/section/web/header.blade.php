@@ -12,6 +12,12 @@
             </div>
 
             <div class="text-nowrap">
+                <a href="https://www.facebook.com/mesin.ppm" target="_blank" class="fs-16 cl-13 hov-link2 trans-02 m-l-15">
+                    <i class="fa fa-facebook-official"></i>	
+                </a>
+                <a href="https://www.instagram.com/ppmpolitap/" target="_blank" class="fs-16 cl-13 hov-link2 trans-02 m-l-15">
+                    <i class="fa fa-instagram"></i>	
+                </a>
                 <a href="{{ url('login') }}" class="fs-16 cl-13 hov-link2 trans-02 m-l-15">
                     <i class="fa fa-log-in"></i> Login
                 </a>
@@ -100,6 +106,7 @@
                             <li><a href="{{ url('event/publikasi') }}"> Publikasi</a></li>
                             <li><a href="{{ url('event/seminar') }}"> Seminar</a></li>
                             <li><a href="{{ url('event/galeri') }}"> Galeri</a></li>
+                            <li><a href="{{ url('event/video') }}"> Video</a></li>
                         </ul>
                     </li>
 

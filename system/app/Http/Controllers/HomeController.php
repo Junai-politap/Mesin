@@ -23,8 +23,8 @@ class HomeController extends Controller
     public function index()
     {
         $data['list_slide'] = Slide::all();
-        $data['list_berita'] = Berita::orderBy('id', 'DESC')->get();
-        $data['list_video'] = Video::orderBy('id', 'DESC')->take(5)->get();
+        $data['list_berita'] = Berita::orderBy('id', 'DESC')->take(3)->get();
+        $data['list_video'] = Video::orderBy('id', 'DESC')->take(1)->get();
         return view('web.index', $data);
     }
 
@@ -129,6 +129,22 @@ class HomeController extends Controller
         $data['kerjasama'] = $kerjasama;
         $data['list_kerjasama'] = Kerjasama::orderBy('id', 'DESC')->get();
         return view('web.kerjasama.show', $data);
+    }
+
+    public function video()
+    {
+        $data['list_vd'] = Video::orderBy('id', 'DESC')->take(1)->get();
+        $data['list_video'] = Video::orderBy('id', 'DESC')->get();
+
+        return view('web.event.video', $data);
+    }
+
+    public function showVideo(Video $video)
+    {
+        $data['video'] = $video;
+        $data['list_vd'] = Video::orderBy('id', 'DESC')->take(1)->get();
+        $data['list_video'] = Video::orderBy('id', 'DESC')->get();
+        return view('web.event.video-detail', $data);
     }
 
 }

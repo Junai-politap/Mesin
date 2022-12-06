@@ -138,6 +138,9 @@ Route::get('event/detail-galeri/{galeri}', [HomeController::class, 'showGaleri']
 Route::get('kerjasama', [HomeController::class, 'kerjasama']);
 Route::get('kerjasama/{kerjasama}', [HomeController::class, 'showKerjasama']);
 
+Route::get('event/video', [HomeController::class, 'video']);
+Route::get('event/video-detail/{video}', [HomeController::class, 'showVideo']);
+
 
 
 

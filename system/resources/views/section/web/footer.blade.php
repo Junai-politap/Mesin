@@ -19,6 +19,19 @@
                             Barat 78112
                         </p>
 
+                        <div class="flex-wr-s-c p-t-10">
+                            <a href="https://www.facebook.com/mesin.ppm" target="_blank" class="flex-c-c size-a-7 borad-50per bg-11 fs-16 cl-0 hov-btn2 trans-02 m-r-10">
+                                <i class="fa fa-facebook"></i>	
+                            </a>
+
+                            
+                            <a href="https://www.instagram.com/ppmpolitap/" target="_blank" class="flex-c-c size-a-7 borad-50per bg-11 fs-16 cl-0 hov-btn2 trans-02 m-r-10">
+                                <i class="fa fa-instagram"></i>	
+                            </a>
+
+                           
+                        </div>
+
                     </div>
                 </div>
 
