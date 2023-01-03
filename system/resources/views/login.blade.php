@@ -16,7 +16,7 @@
         <link href="{{ url('public/admin') }}/assets/css/app.min.css" rel="stylesheet" type="text/css" />
 
     </head>
-    eysudhasgdahsdh
+   
 
     <body class="authentication-bg authentication-bg-pattern d-flex align-items-center">
 
